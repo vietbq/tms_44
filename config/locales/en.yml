@@ -21,3 +21,25 @@
 
 en:
   hello: "Hello world"
+  header:
+    brand: "TMS"
+    about: "About"
+    help: "Help"
+    new: "News"
+    nav: "Toggle navigation"
+  about:
+    t: "Member details"
+    ad: "Admin:"
+    mem: "Member:"
+    ad1: "Nguyen Binh Dieu"
+    ad2: "Chu Anh Tuan"
+    mem1: "Bui Quoc Viet"
+    mem2: "Tran Ngoc Linh"
+    mem3: "Khong Minh Tri"
+  help:
+    t: "StaticPages#help"
+    ct: "Find me in app/views/static_pages/help.html.erb"
+  user:
+    p: "Profile"
+    lo: "Log out"
+
