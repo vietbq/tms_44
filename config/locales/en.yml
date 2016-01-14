@@ -40,6 +40,14 @@ en:
     t: "StaticPages#help"
     ct: "Find me in app/views/static_pages/help.html.erb"
   user:
-    p: "Profile"
-    lo: "Log out"
-
+    profile: "Profile"
+    logout: "Log out"
+    login: "Log in"
+    err_not_active: "Account not activated. Check your email for the activation link."
+    err_invalid: "Invalid email/password combination"
+    pls_login: "Please log in."
+    pls_check_email: "Please check your email to activate your account."
+    update_success: "Profile updated"
+    delete_success: "User deleted"
+    forgot_password: "(Forgot password)"
+    remember_me: "Remember me on this computer"
