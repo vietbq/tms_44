@@ -11,3 +11,6 @@ User.create!(name:  "Khong Minh Tri",
   password_confirmation: "123456",
   activated: true,
   activated_at: Time.zone.now)
+
+linh2 = Superuser.create(name:"linh2",email:"linh2@gmail.com",
+  password:"linhtn",password_confirmation:"linhtn")

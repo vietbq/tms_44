@@ -8,4 +8,11 @@ Rails.application.routes.draw do
   delete "logout" => "sessions#destroy"
   resources :users
   resources :password_resets, except: [:destroy, :index]
+
+  namespace :admin do
+    get "login" => "sessions#new"
+    post "login" => "sessions#create"
+    delete "logout"  => "sessions#destroy"
+    root "sessions#new"
+  end
 end
