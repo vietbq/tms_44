@@ -73,3 +73,7 @@ en:
   form:
     the_form_contains: "The form contains "
     confirmation: "Confirmation"
+  profile:
+    information: "Information"
+    name: "Name"
+    email: "Email"
