@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :user_tasks, dependent: :destroy
   has_many :activities, dependent: :destroy
   
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :reset_token
 
   validates :name, presence: true, length: {maximum: 50}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -26,6 +26,20 @@ class User < ActiveRecord::Base
 
   def forget
     update_attributes remember_digest: nil
+  end
+
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update_attributes reset_digest: User.digest(reset_token),
+      reset_sent_at: Time.zone.now
+  end
+
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
+
+  def password_reset_expired?
+    reset_sent_at < Settings.time_reset_password.hours.ago
   end
 
   class << self
