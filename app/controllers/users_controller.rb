@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: [:show]
   before_action :load_user, only: [:show]
   
   def show
