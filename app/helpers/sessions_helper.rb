@@ -1,4 +1,21 @@
 module SessionsHelper
+  def log_in_superuser superuser
+    session[:superuser_id] = superuser.id
+  end
+
+  def current_superuser
+    @current_superuser ||= Superuser.find_by(id: session[:superuser_id])
+  end
+
+  def logged_in_superuser?
+    current_superuser.present?
+  end
+
+  def log_out_superuser
+    session.delete :superuser_id
+    @current_superuser = nil
+  end
+
   def log_in user
     session[:user_id] = user.id
   end
@@ -24,7 +41,7 @@ module SessionsHelper
       end
     end
   end
-  
+
   def logged_in?
     current_user.present?
   end
@@ -41,7 +58,7 @@ module SessionsHelper
     @current_user = nil
   end
 
-  def redirect_back_or default 
+  def redirect_back_or default
     redirect_to session[:forwarding_url] || default
     session.delete :forwarding_url
   end
