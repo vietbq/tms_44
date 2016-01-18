@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :users
   resources :password_resets, except: [:destroy, :index]
   resources :user_courses, only: [:index]
+  resources :courses, only: [:show]   do
+    resources :members, only: [:index]
+  end
 
   namespace :admin do
     get "login" => "sessions#new"

@@ -96,7 +96,13 @@ en:
   user_courses: 
     title: "List courses of User"
     course: "Course's name"
-    subjects: "Number of subjects"
+    subjects: "Subjects of course"
     start: "Start date"
     end: "End date"
     status: "Status"
+    users_list: "Trainees of course "
+    member:
+      username: "Username"
+      email: "Email"
+      create_at: "Created date"
+

@@ -1,0 +1,18 @@
+<div class="jumbotron course-jumbotron">
+  <div class="list-user-of-course">
+    <%= link_to t("user_courses.users_list"), course_members_path(@course) %>
+  </div>
+  <h1><%= @title_for_layout %></h1>
+  <hr>
+  <div class="row text-center">
+    <% if @course_subjects.any? %>
+      <% @course_subjects.each do |course_subject| %>
+        <button type="button" class="btn btn-info btn-width-subject"> 
+          <%= course_subject.subject.name %>
+        </button>
+      <% end %>
+    <% end %>
+  </div>
+  <center><i><%= t "user_courses.subjects" %></i></center>
+  <span><%= @course.description %></span>
+</div>
