@@ -31,6 +31,7 @@ en:
     home: "Home"
     account: "Account"
     courses: "Courses"
+    update_profile: "Update your profile"
   about:
     t: "Member details"
     ad: "Admin:"
@@ -49,6 +50,7 @@ en:
     setting: "Settings"
     logout: "Log out"
     login: "Log in"
+    update_success: "Update successed"
     err_not_active: "Account not activated. Check your email for the activation link."
     err_invalid: "Invalid email/password combination"
     pls_login: "Please log in."
@@ -80,6 +82,7 @@ en:
     the_form_contains: "The form contains "
     confirmation: "Confirmation"
     submit: "Submit"
+    save_changes: "Save changes"
   profile:
     information: "Information"
     name: "Name"
@@ -93,7 +96,7 @@ en:
     status1: "Not start"
     status2: "Trainning"
     status3: "Finish"
-  user_courses: 
+  user_courses:
     title: "List courses of User"
     course: "Course's name"
     subjects: "Subjects of course"

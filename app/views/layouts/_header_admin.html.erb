@@ -13,7 +13,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to t("user.profile"), "#" %></li>
-              <li><%= link_to t("user.setting"), "#" %></li>
+              <li><%= link_to t("user.setting"), edit_admin_superuser_path(current_superuser)  %></li>
               <li class="divider"></li>
               <li>
                 <%= link_to t("user.logout"), admin_logout_path, method: "delete" %>

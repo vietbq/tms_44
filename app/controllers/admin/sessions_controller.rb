@@ -16,6 +16,6 @@ class Admin::SessionsController < ApplicationController
 
   def destroy
     log_out_superuser if logged_in_superuser?
-    redirect_to admin_root_path
+    redirect_to admin_login_path
   end
 end
