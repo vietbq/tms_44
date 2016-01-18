@@ -12,14 +12,16 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+        <li><%= link_to t("header.courses"), user_courses_path %></li>
         <li><%= link_to t("header.about"), about_path %></li>
         <li><%= link_to t("header.help"), help_path %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
           <li><%= link_to t("user.logout"), logout_path, method: "delete" %><li>
         <% else %>
           <li><%= link_to t("user.login"), login_path %></li>
         <% end %>
-      </ul>
     </div>
   </div>
 </nav>

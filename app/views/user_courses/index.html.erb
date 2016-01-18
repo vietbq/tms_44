@@ -1,0 +1,26 @@
+<h1><%= @title_for_layout  %></h1>
+<hr>
+<table class="table table-hover"> 
+  <thead> 
+    <tr> 
+      <th>#</th> 
+      <th><%= t "user_courses.course" %></th> 
+      <th><%= t "user_courses.subjects" %></th> 
+      <th><%= t "user_courses.start" %></th> 
+      <th><%= t "user_courses.end" %></th> 
+      <th><%= t "user_courses.status" %></th> 
+    </tr> 
+  </thead> 
+  <tbody> 
+    <% @user_courses.each_with_index do |user_course,index| %>
+      <tr> 
+        <th scope="row"><%= index + 1 %></th> 
+        <td><%= user_course.course.name %></td>
+        <td><%= user_course.course.course_subjects.count %></td>  
+        <td><%= user_course.course.start_date %></td> 
+        <td><%= user_course.course.end_date %></td> 
+        <td><%= course_status user_course.status %></td> 
+      </tr> 
+    <% end %>
+  </tbody> 
+</table>
