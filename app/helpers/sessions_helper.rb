@@ -7,6 +7,10 @@ module SessionsHelper
     @current_superuser ||= Superuser.find_by(id: session[:superuser_id])
   end
 
+  def current_superuser? superuser
+    superuser == current_superuser
+  end
+
   def logged_in_superuser?
     current_superuser.present?
   end

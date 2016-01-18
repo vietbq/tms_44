@@ -11,4 +11,11 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
+
+  def logged_in_superuser
+    unless logged_in_superuser?
+      flash[:danger] = t "user.pls_login"
+      redirect_to admin_login_path
+    end
+  end
 end
