@@ -30,6 +30,7 @@ en:
     nav: "Toggle navigation"
     home: "Home"
     account: "Account"
+    courses: "Courses"
   about:
     t: "Member details"
     ad: "Admin:"
@@ -84,3 +85,14 @@ en:
   application:
     flash:
       error_login: "Invalid email/password combination"
+  status:
+    status1: "Not start"
+    status2: "Trainning"
+    status3: "Finish"
+  user_courses: 
+    title: "List courses of User"
+    course: "Course's name"
+    subjects: "Number of subjects"
+    start: "Start date"
+    end: "End date"
+    status: "Status"

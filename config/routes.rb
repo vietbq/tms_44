@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get "about" => "static_pages#about"
   get "help" => "static_pages#help"
   root "static_pages#about"
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
   delete "logout" => "sessions#destroy"
   resources :users
   resources :password_resets, except: [:destroy, :index]
+  resources :user_courses, only: [:index]
 
   namespace :admin do
     get "login" => "sessions#new"
