@@ -45,19 +45,19 @@ en:
     ct: "Find me in app/views/static_pages/help.html.erb"
   user:
     profile: "Profile"
+    account: "Account"
+    setting: "Settings"
     logout: "Log out"
     login: "Log in"
     err_not_active: "Account not activated. Check your email for the activation link."
     err_invalid: "Invalid email/password combination"
     pls_login: "Please log in."
     pls_check_email: "Please check your email to activate your account."
-    update_success: "Profile updated"
     delete_success: "User deleted"
     forgot_password: "(Forgot password)"
     forgot_password_2: "Forgot password"
     remember_me: "Remember me on this computer"
     user: "User"
-    setting: "Setting"
     submit: "Submit"
     user_mailer:
       password_reset:
@@ -69,6 +69,7 @@ en:
     can_not_empty: "can't be empty"
     has_been_reset: "Password has been reset."
     has_expired: "Password reset has expired."
+    confirmation: "Confirmation"
   mailer:
     password_reset: "Password reset"
     please_click: "To reset your password click the link below:"
@@ -78,10 +79,13 @@ en:
   form:
     the_form_contains: "The form contains "
     confirmation: "Confirmation"
+    submit: "Submit"
   profile:
     information: "Information"
     name: "Name"
     email: "Email"
+    update: "Update your profile"
+    updated: "Profile updated"
   application:
     flash:
       error_login: "Invalid email/password combination"
