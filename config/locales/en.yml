@@ -108,4 +108,11 @@ en:
       username: "Username"
       email: "Email"
       create_at: "Created date"
-
+  dashboard:
+    dashboard: "Dashboard"
+    course: "Courses"
+    subject: "Subjects"
+    user: "Users"
+    amount: "Amount"
+    view: "View"
+    create: "Create"
