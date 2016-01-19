@@ -8,6 +8,7 @@ class Admin::SessionsController < ApplicationController
     superuser = Superuser.find_by email: params[:session][:email].downcase
     if superuser && superuser.authenticate(params[:session][:password])
       log_in_superuser superuser
+      redirect_to admin_root_path
     else
       flash[:danger] = t "application.flash.error_login"
       render :new

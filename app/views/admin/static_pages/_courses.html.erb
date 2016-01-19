@@ -1,0 +1,29 @@
+<div class="col-md-4">
+  <div class="panel panel-info">
+    <div class="panel panel-heading">
+      <h3 class="panel-title"><%= t "dashboard.course" %></h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class=" col-md-12">
+          <table class="table table-user-information">
+            <tbody>
+              <tr>
+                <td><%= t "dashboard.amount" %></td>
+                <td><%= @courses.count %></td>
+              </tr>
+              <tr>
+                <td><%= link_to t("dashboard.view"), "#" %></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><%= link_to t("dashboard.create"), "#" %></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
