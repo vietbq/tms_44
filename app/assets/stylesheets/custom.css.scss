@@ -92,4 +92,48 @@ input {
   width: auto;
   margin-left: 0;
 }
-
+.checkbox-sub{
+  padding: 0px 20px;
+}
+.subject{
+  input{
+    width: auto;
+    margin-right: 10px;
+  }
+  margin: 0 auto;
+  .status-trainning {
+    width: 150px;
+    margin: 10px 0.5% 0px 0.5%;
+    background: #37bc9b;
+    color: white;
+    padding: 10px;
+  }
+  .status-not-start {
+    width: 150px;
+    margin: 10px 0.5% 0px 0.5%;
+    background: #F19603;
+    color: white;
+    padding: 10px;
+  }
+  .status-finish {
+    width: 150px;
+    margin: 10px 0.5% 0px 0.5%;
+    background: #9A9A9A;
+    color: white;
+    padding: 10px;
+  }
+  .instruction{
+    display: inline;
+  }
+  ul li{
+    list-style-type: none
+  }
+  .btn-update-sub{
+    margin-top: 20px
+  }
+}
+.timestamp{
+  font-style: italic;
+  font-size: 13px;
+  color: darkgray;
+}

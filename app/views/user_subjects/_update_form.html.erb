@@ -1,0 +1,20 @@
+<%= form_tag user_subject_course_subject_tasks_path(@user_subject) do %>
+  <div class="row text-center">
+    <% @course_subject_tasks.each do |course_subject_task| %>
+      <% user_task_status course_subject_task.id %>
+      <label class= "<%= @task_class %>" >
+        <center><%= course_subject_task.task.name %><br></center>
+        <div class="controls" style="float: bottom">
+          <label class="checkbox-sub inline">
+            <%= hidden_field_tag "course_subject_task[]", course_subject_task.id %>
+            <%= check_box_tag "status[]", course_subject_task.id, @check_box_status %>
+            <i><%= @check_box_text %></i>
+          </label>
+        </div>
+      </label>
+    <% end %>
+  </div>
+  <center>
+    <%= submit_tag t("subject.button"), class: "btn btn-primary btn-update-sub" %>
+  </center>
+<% end %>

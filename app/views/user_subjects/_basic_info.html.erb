@@ -1,0 +1,12 @@
+<h3><%= t "subject.info" %></h3>
+<ul>
+  <li>
+    <b><%= t "subject.start" %></b>
+    <%= @user_subject.course_subject.course.start_date %>
+  </li>
+  <li>
+    <b><%= t "subject.end" %></b>
+    <%= @user_subject.course_subject.course.end_date %>
+  </li>
+  <li><b><%= t "subject.status" %></b><%= @user_subject.status %></li>
+</ul>

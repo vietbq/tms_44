@@ -26,3 +26,11 @@ function add_fields(link, association, content) {
   var regexp = new RegExp("new_" + association, "g")
   $(content.replace(regexp, new_id)).insertBefore("input[type='submit']");
 }
+
+function hidden_content(id) {
+  if($(id).is(":visible")){
+    $(id).hide();
+  }else{
+    $(id).show();
+  }
+}
