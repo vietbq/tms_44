@@ -116,3 +116,8 @@ en:
     amount: "Amount"
     view: "View"
     create: "Create"
+  admin:
+    user:
+      create: "Create user"
+      created_user: "User is created successfully"
+      all: "All users"
