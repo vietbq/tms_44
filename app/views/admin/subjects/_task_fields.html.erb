@@ -1,0 +1,15 @@
+<div class="nested-fields">    
+  <div class="col-md-8 col-md-offset-2">	
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+      <div class="col-md-7">
+        <%= f.text_field :description, class: "form-control" %>
+      </div>
+      <div class="col-md-1">
+        <%= link_to_remove_fields t("admin.subject.remove_task_field"), f %>
+      </div>
+    </div>
+  </div>
+</div>

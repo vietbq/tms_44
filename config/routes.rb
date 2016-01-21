@@ -20,5 +20,6 @@ Rails.application.routes.draw do
     root "static_pages#dashboard"
     resources :superusers
     resources :users
+    resources :subjects, only: [:new, :create, :index]
   end
 end

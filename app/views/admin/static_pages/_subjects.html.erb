@@ -13,11 +13,12 @@
                 <td><%= @subjects.count %></td>
               </tr>
               <tr>
-                <td><%= link_to t("dashboard.view"), "#" %></td>
+                <td><%= link_to t("dashboard.view"), admin_subjects_path %></td>
                 <td></td>
               </tr>
               <tr>
-                <td><%= link_to t("dashboard.create"), "#" %></td>
+                <td><%= link_to t("dashboard.create"),
+                  new_admin_subject_path %></td>
                 <td></td>
               </tr>
             </tbody>
