@@ -1,0 +1,18 @@
+<h1><%= t "admin.user.all" %></h1>
+<br>
+<br>
+<%= will_paginate %>
+<table class="table table-hover"> 
+  <tbody>
+    <tr> 
+      <th>#</th> 
+      <th><%= t "user_courses.member.username" %></th> 
+      <th><%= t "user_courses.member.email" %></th> 
+      <th><%= t "user_courses.member.create_at" %></th> 
+    </tr>
+    <ul class="users">
+      <%= render @users %>
+    </ul>
+  </tbody>
+</table>
+<%= will_paginate %>

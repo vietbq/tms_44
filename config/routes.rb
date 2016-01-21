@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "login" => "sessions#new"
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
-  resources :users
+  resources :users, only: [:show, :edit, :update]
   resources :password_resets, except: [:destroy, :index]
   resources :user_courses, only: [:index]
   resources :courses, only: [:show]   do
@@ -19,5 +19,6 @@ Rails.application.routes.draw do
     delete "logout"  => "sessions#destroy"
     root "static_pages#dashboard"
     resources :superusers
+    resources :users
   end
 end
