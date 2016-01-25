@@ -1,4 +1,4 @@
-<tr> 
+<tr>
   <th><%= subject.id %></th> 
   <td><%= subject.name %></td>
   <td><%= subject.description %></td>
@@ -8,7 +8,7 @@
       <%= link_to t("edit"), edit_admin_subject_path(subject),
         class: "btn btn-primary" %>
       <%= link_to t("delete"), [:admin, subject], method: :delete,
-        data: {confirm: "You sure"}, class: "btn btn-danger" %>
+        data: {confirm: t("you_sure")}, class: "btn btn-danger" %>
     </div>
   </td>
 </tr>

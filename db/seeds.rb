@@ -20,3 +20,6 @@ User.create!(name:  "Khong Minh Tri",
 
 linh2 = Superuser.create(name:"linh2",email:"linh2@gmail.com",
   password:"linhtn",password_confirmation:"linhtn")
+
+Superuser.create(name:"Khong Minh Tri",email:"trikm.bk56@gmail.com",
+  password:"123456",password_confirmation:"123456")

@@ -5,9 +5,13 @@
   <td><%= course.start_date %></td>
   <td><%= course.end_date %></td>
   <td>
-    <div class="pull-right">
-      <%= link_to t("edit"), "#", class: "btn btn-primary" %>
-      <%= link_to t("delete"), "#", class: "btn btn-danger" %>
-    </div>
+    <% if course.managed_by? current_superuser %>
+      <div class="pull-right">
+        <%= link_to t("edit"), edit_admin_course_path(course),
+          class: "btn btn-primary" %>
+        <%= link_to t("delete"), [:admin, course], method: :delete,
+          data: {confirm: t("you_sure")}, class: "btn btn-danger" %>
+      </div>
+    <% end %>
   </td>
 </tr>

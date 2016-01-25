@@ -135,10 +135,13 @@ en:
     course:
       course: "Course"
       create: "Create course"
+      edit: "Edit course"
       all: "All courses"
       create: "Create course"
       select_subject: "Select subjects"
       created: "Course is created successfully"
+      deleted: "Course is deleted successfully"
+      updated: "Course is updated successfully"
   select: "Select"
   name: "Name"
   description: "Description"
@@ -147,6 +150,7 @@ en:
   end_date: "End date"
   edit: "Edit"
   delete: "Delete"
+  you_sure: "You sure?"
   subject:
     title: "Subject: "
     button: "Update"
