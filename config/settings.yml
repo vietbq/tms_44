@@ -1,3 +1,20 @@
 time_reset_password: 2
 avatar_size: 250
 min_tasks_of_subject: 1
+status:
+  not_status:
+    title: "Not start"
+    check_box: false
+    status_class: "status-not-start" 
+  trainning:
+    title: "Trainning"
+    check_box: false
+    status_class: "status-trainning"
+  finish:
+    title: "Finish"
+    check_box: true
+    status_class: "status-finish"
+target_type:
+  course: 1
+  subject: 2
+  task: 3

@@ -147,3 +147,13 @@ en:
   end_date: "End date"
   edit: "Edit"
   delete: "Delete"
+  subject:
+    title: "Subject: "
+    button: "Update"
+    info: "Basic information"
+    start: "Start date: "
+    end: "End date: "
+    status: "Status: "
+    instruction: "Instruction"
+    hide: " (hide) "
+    activity: "Activities"
