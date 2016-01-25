@@ -13,11 +13,11 @@
                 <td><%= @courses.count %></td>
               </tr>
               <tr>
-                <td><%= link_to t("dashboard.view"), "#" %></td>
+                <td><%= link_to t("dashboard.view"), admin_courses_path %></td>
                 <td></td>
               </tr>
               <tr>
-                <td><%= link_to t("dashboard.create"), "#" %></td>
+                <td><%= link_to t("dashboard.create"), new_admin_course_path %></td>
                 <td></td>
               </tr>
             </tbody>

@@ -1,0 +1,20 @@
+<h1><%= t "admin.course.all" %></h1>
+<br>
+<br>
+<%= will_paginate %>
+<table class="table table-hover"> 
+  <tbody>
+    <tr> 
+      <th>#</th> 
+      <th><%= t "name" %></th> 
+      <th><%= t "description" %></th> 
+      <th><%= t "start_date" %></th> 
+      <th><%= t "end_date" %></th>
+      <th></th>
+    </tr>
+    <ul class="courses">
+      <%= render @courses %>
+    </ul>
+  </tbody>
+</table>
+<%= will_paginate %>
