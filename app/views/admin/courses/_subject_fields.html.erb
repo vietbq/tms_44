@@ -1,0 +1,20 @@
+<h3><%= t "admin.course.select_subject" %></h3>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th></th>
+      <th><%= t "name" %></th>
+      <th><%= t "description" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= f.fields_for :course_subjects, @course.get_course_subjects do |builder| %>
+      <tr> 
+        <td><%= builder.check_box :_destroy, {}, 0, 1 %></td>
+        <td><%= builder.object.subject.name %></td>
+        <td><%= builder.object.subject.description %></td>
+      </tr>
+      <%= builder.hidden_field :subject_id, value: builder.object.subject_id %>
+    <% end %>
+  </tbody>
+</table>

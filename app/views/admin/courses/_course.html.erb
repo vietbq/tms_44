@@ -1,0 +1,13 @@
+<tr> 
+  <th><%= course.id %></th> 
+  <td><%= course.name %></td>
+  <td><%= course.description %></td>
+  <td><%= course.start_date %></td>
+  <td><%= course.end_date %></td>
+  <td>
+    <div class="pull-right">
+      <%= link_to t("edit"), "#", class: "btn btn-primary" %>
+      <%= link_to t("delete"), "#", class: "btn btn-danger" %>
+    </div>
+  </td>
+</tr>
