@@ -72,23 +72,23 @@ input {
   }
 }
 
-.field_with_errors {
+.field_with_errors{
   @extend .has-error;
   .form-control {
     color: $state-danger-text;
   }
 }
 
-.checkbox {
+.checkbox{
   margin-top: -10px;
   margin-bottom: 10px;
-  span {
+  span{
     margin-left: 20px;
     font-weight: normal;
   }
 }
 
-#session_remember_me {
+#session_remember_me{
   width: auto;
   margin-left: 0;
 }
@@ -101,25 +101,19 @@ input {
     margin-right: 10px;
   }
   margin: 0 auto;
-  .status-trainning {
+  .status-trainning{
     width: 150px;
     margin: 10px 0.5% 0px 0.5%;
-    background: #37bc9b;
-    color: white;
     padding: 10px;
   }
-  .status-not-start {
+  .status-not-start{
     width: 150px;
     margin: 10px 0.5% 0px 0.5%;
-    background: #F19603;
-    color: white;
     padding: 10px;
   }
-  .status-finish {
+  .status-finish{
     width: 150px;
     margin: 10px 0.5% 0px 0.5%;
-    background: #9A9A9A;
-    color: white;
     padding: 10px;
   }
   .instruction{
@@ -135,5 +129,28 @@ input {
 .timestamp{
   font-style: italic;
   font-size: 13px;
-  color: darkgray;
+  color: rgb(121, 123, 117);
+  font-weight: 100;
+}
+.gravatar{
+  margin-bottom: 10px;
+}
+.select_tag{
+  width: auto;
+  display: inline;
+}
+.status-trainning{
+  background: #37bc9b;
+  color: white;
+}
+.status-not-start{
+  background: #F19603;
+  color: white;
+}
+.status-finish{
+  background: #9A9A9A;
+  color: white;
+}
+.subject-button-width{
+  width: 85px;
 }
