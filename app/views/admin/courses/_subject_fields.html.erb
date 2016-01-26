@@ -10,7 +10,8 @@
   <tbody>
     <%= f.fields_for :course_subjects, @course.get_course_subjects do |builder| %>
       <tr> 
-        <td><%= builder.check_box :_destroy, {}, 0, 1 %></td>
+        <td><%= builder.check_box :_destroy,
+          {checked: @course.course_subjects.include?(builder.object)}, 0, 1 %></td>
         <td><%= builder.object.subject.name %></td>
         <td><%= builder.object.subject.description %></td>
       </tr>

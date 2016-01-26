@@ -25,6 +25,6 @@ Rails.application.routes.draw do
     resources :superusers
     resources :users
     resources :subjects, except: [:show]
-    resources :courses, only: [:index, :new, :create]
+    resources :courses, except: [:show]
   end
 end
