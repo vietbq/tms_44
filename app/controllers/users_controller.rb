@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def show
     @user_course = @user.user_courses.first
     @course_subjects = @user_course.course.course_subjects
+    @activities = Activity.get_user_activities current_user.id
   end
   
   def edit

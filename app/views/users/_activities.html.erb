@@ -1,0 +1,11 @@
+<h3><%= t "course.activity" %></h3>
+<ul>
+  <% @activities.each do |activity| %>
+    <li>
+      <%= activity.description %>
+      <span class="timestamp"> 
+        <%= time_ago_in_words activity.created_at %>
+      </span>
+    </li>
+  <% end %>
+</ul>

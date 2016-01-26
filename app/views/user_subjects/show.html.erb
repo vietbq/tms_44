@@ -16,7 +16,7 @@
     <span>
       <h3><%= t "subject.activity" %></h3>
       <ul>
-        <% @activities.each do |activity| %>
+        <% @activities.each do |activity| if @activities.any? %>
           <li>
             <%= activity.description %>
             <span class="timestamp"> 
