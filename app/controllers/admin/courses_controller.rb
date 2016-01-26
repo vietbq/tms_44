@@ -60,7 +60,7 @@ class Admin::CoursesController < ApplicationController
   end
 
   def load_objects
-    @subjects, @admins, @users = Array.new
+    @subjects, @admins, @users = Array.new, Array.new, Array.new
     @course.course_subjects.each do |course_subject|
       @subjects << course_subject.subject
     end
