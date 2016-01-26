@@ -5,6 +5,10 @@
     <%= admin.email %>
   </li>
   <% end %>
+  <% if @course.managed_by? current_superuser %>
+    <li><%= link_to t("admin.course.add_admin"),
+      new_admin_course_superuser_course_path(@course) %></li>
+  <% end %>
 </ul>
 <br>
 <b><%= t "admin.course.users" %></b>
@@ -13,5 +17,8 @@
   <li>
     <%= user.email %>
   </li>
+  <% end %>
+  <% if @course.managed_by? current_superuser %>
+    <li><%= link_to t("admin.course.add_user"), "#" %></li>
   <% end %>
 </ul>
