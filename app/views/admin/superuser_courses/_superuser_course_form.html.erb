@@ -1,0 +1,8 @@
+<div class="col-md-6 col-md-offset-3">
+  <%= form_tag admin_course_superuser_courses_path, method: "post" do %>
+    <%= label_tag :email %>
+    <%= email_field_tag :email, nil, class: "form-control" %>
+    <%= submit_tag t("form.submit"),
+      class: "btn btn-primary btn-lg col-md-2 col-md-offset-5" %>
+  <% end %>
+</div>
