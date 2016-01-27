@@ -119,8 +119,11 @@ en:
   admin:
     user:
       create: "Create user"
+      edit: "Edit user"
       created_user: "User is created successfully"
       all: "All users"
+      deleted: "User is deleted successfully"
+      updated: "User is updated successfully"
     subject:
       subject: "Subject"
       create: "Create subject"
