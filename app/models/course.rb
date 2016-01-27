@@ -24,6 +24,14 @@ class Course < ActiveRecord::Base
     superuser_courses.find_by superuser_id: superuser.id
   end
 
+  def has_user? user
+    user_courses.find_by user_id: user.id
+  end
+
+  def get_user_course user
+    user_courses.find_by user_id: user.id
+  end
+
   def present_course_subjects
     hash_course_subjects = Hash.new
     course_subjects.each do |course_subject|
