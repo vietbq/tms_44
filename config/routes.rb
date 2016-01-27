@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     resources :courses do
       resources :superuser_courses, only: [:new, :create]
       resources :user_courses, only: [:new, :create, :destroy]
+      resources :user_subjects, only: [:create]
     end
   end
 end

@@ -4,6 +4,8 @@ class Course < ActiveRecord::Base
   accepts_nested_attributes_for :course_subjects, allow_destroy: true
   has_many :superuser_courses, dependent: :destroy
   
+  enum status: [:not_start, :trainning, :finish]
+
   validates :name, presence: true
   validates :description, presence: true
 
@@ -38,5 +40,29 @@ class Course < ActiveRecord::Base
       hash_course_subjects[course_subject.subject_id] = course_subject
     end
     hash_course_subjects
+  end
+
+  def load_users
+    users = Array.new
+    user_courses.each do |user_course|
+      users << user_course.user
+    end
+    users
+  end
+
+  def load_subjects
+    subjects = Array.new
+    course_subjects.each do |course_subject|
+      subjects << course_subject.subject
+    end
+    subjects
+  end
+
+  def load_admins
+    admins = Array.new
+    superuser_courses.each do |superuser_course|
+      admins << superuser_course.superuser
+    end
+    admins
   end
 end

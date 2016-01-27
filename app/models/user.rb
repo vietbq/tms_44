@@ -42,6 +42,14 @@ class User < ActiveRecord::Base
     reset_sent_at < Settings.time_reset_password.hours.ago
   end
 
+  def is_working?
+    check = false
+    user_courses.each do |user_course|
+      check = true if user_course.trainning?
+    end
+    check
+  end
+
   class << self
     def digest string
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

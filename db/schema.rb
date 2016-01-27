@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160125055340) do
+ActiveRecord::Schema.define(version: 20160127114901) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
@@ -37,9 +37,9 @@ ActiveRecord::Schema.define(version: 20160125055340) do
   create_table "course_subjects", force: :cascade do |t|
     t.integer  "course_id"
     t.integer  "subject_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "status"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "status",     default: 0
   end
 
   add_index "course_subjects", ["course_id"], name: "index_course_subjects_on_course_id"
@@ -50,9 +50,9 @@ ActiveRecord::Schema.define(version: 20160125055340) do
     t.text     "description"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "status"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "status",      default: 0
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -95,9 +95,9 @@ ActiveRecord::Schema.define(version: 20160125055340) do
     t.integer  "user_id"
     t.integer  "course_id"
     t.datetime "finish_date"
-    t.integer  "status"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "status",      default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   add_index "user_courses", ["course_id"], name: "index_user_courses_on_course_id"
@@ -106,10 +106,10 @@ ActiveRecord::Schema.define(version: 20160125055340) do
   create_table "user_subjects", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "course_subject_id"
-    t.integer  "status"
+    t.integer  "status",            default: 0
     t.datetime "finish_date"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   add_index "user_subjects", ["course_subject_id"], name: "index_user_subjects_on_course_subject_id"
