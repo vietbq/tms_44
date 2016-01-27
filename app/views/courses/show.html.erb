@@ -7,7 +7,7 @@
   <div class="row text-center">
     <% if @course_subjects.any? %>
       <% @course_subjects.each do |course_subject| %>
-        <%= link_to course_subject.subject.name, get_user_subjects(course_subject),
+        <%= button_tag course_subject.subject.name, type: "button",
           class: "btn btn-info btn-width-subject" %>
       <% end %>
     <% end %>

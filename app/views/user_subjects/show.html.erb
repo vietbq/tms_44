@@ -16,13 +16,15 @@
     <span>
       <h3><%= t "subject.activity" %></h3>
       <ul>
-        <% @activities.each do |activity| if @activities.any? %>
-          <li>
-            <%= activity.description %>
-            <span class="timestamp"> 
-              <%= time_ago_in_words activity.created_at %>
-            </span>
-          </li>
+        <% if @activities.any? %>
+          <% @activities.each do |activity| %>
+            <li>
+              <%= activity.description %>
+              <span class="timestamp"> 
+                <%= time_ago_in_words activity.created_at %>
+              </span>
+            </li>
+          <% end %>
         <% end %>
       </ul>
     </span>

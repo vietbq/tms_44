@@ -31,6 +31,7 @@ en:
     home: "Home"
     account: "Account"
     courses: "Courses"
+    subjects: "Subjects"
     update_profile: "Update your profile"
   about:
     t: "Member details"
@@ -108,6 +109,13 @@ en:
       username: "Username"
       email: "Email"
       create_at: "Created date"
+  user_subjects:
+    title: "List subjects of User"
+    subject: "Subject's name"
+    course: "Course's name"
+    start: "Start date"
+    end: "End date"
+    status: "Status"
   dashboard:
     dashboard: "Dashboard"
     course: "Courses"

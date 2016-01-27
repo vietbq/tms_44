@@ -4,6 +4,5 @@ class UserSubject < ActiveRecord::Base
 
   enum status: [:not_start, :trainning, :finish]
   
-  scope :get_user_subject, -> course_subject_id, user_id{
-    find_by user_id: user_id, course_subject_id: course_subject_id}
+  scope :get_user_subjects, -> user_id{where "user_id = ? and status != 0", user_id}
 end
