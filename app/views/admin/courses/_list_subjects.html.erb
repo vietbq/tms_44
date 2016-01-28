@@ -3,6 +3,19 @@
   <% @subjects.each do |subject| %>
   <li>
     <%= subject.name %>
+      <% if @course.trainning? %>
+        <% if @course.get_course_subject(subject).not_start? %>
+          <%= link_to t("start"),
+            admin_course_course_subject_path(@course,
+            @course.get_course_subject(subject), status: Settings.start),
+            method: :patch, class: "glyphicon glyphicon-play" %>
+        <% elsif @course.get_course_subject(subject).trainning? %>
+          <%= link_to t("finish"),
+            admin_course_course_subject_path(@course,
+            @course.get_course_subject(subject), status: Settings.finish),
+            method: :patch, class: "glyphicon glyphicon-stop" %>
+        <% end %>
+      <% end %>
     <%= render "list_tasks", tasks: subject.tasks %>
   </li>
   <% end %>

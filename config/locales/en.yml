@@ -151,6 +151,8 @@ en:
       all: "All subjects"
       deleted: "Subject is deleted successfully"
       updated: "Subject is updated successfully"
+      start_subject_success: "Start subject success"
+      finish_subject_success: "Finish subject success"
     course:
       course: "Course"
       create: "Create course"
