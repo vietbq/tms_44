@@ -24,4 +24,5 @@ target_type:
   course: 1
   subject: 2
   task: 3
-get_user_subjects_query: "user_id = ? and status != 0"  
+get_user_subjects_query: "user_id = ? and status != 0"
+activity_limit: 40

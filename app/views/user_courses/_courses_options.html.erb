@@ -7,8 +7,9 @@
 <div class="col-md-5 col-sm-5 col-xs-6">
   <%= label_tag t("course.start"), nil, class: "small_label" %>
   <span class="timestamp">
-    <%= @user_course.course.start_date.strftime(t "time_format") +
-      " - " + @user_course.course.end_date.strftime(t "time_format") %>
+    <%= @user_course.course.start_date %>
+     - 
+    <%= @user_course.course.end_date %>
   </span>
 </div>
 <div class="col-md-2 col-sm-2">

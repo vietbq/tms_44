@@ -22,10 +22,10 @@
             user_subject.course_subject.course %>
         </td>
         <td>
-          <%= user_subject.course_subject.course.start_date.strftime(t "time_format") %>
+          <%= user_subject.course_subject.course.start_date %>
         </td>
         <td>
-          <%= user_subject.course_subject.course.end_date.strftime(t "time_format") %>
+          <%= user_subject.course_subject.course.end_date %>
         </td>
         <td><%= label_tag @status_text, nil, class: @label_class %></td>
       </tr>

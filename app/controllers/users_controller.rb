@@ -3,12 +3,6 @@ class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update]
   include UserSubjectsHelper
 
-  def show
-    @user_course = @user.user_courses.first
-    @course_subjects = @user_course.course.course_subjects
-    @activities = Activity.get_user_activities current_user.id
-  end
-  
   def edit
   end
 

@@ -24,7 +24,10 @@
               <%= t "user.account" %> <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to t("user.profile"), current_user %></li>
+              <li>
+                <%= link_to t("user.profile"), user_user_course_path(current_user,
+                  current_user.user_courses.first) %>
+              </li>
               <li>
                 <%= link_to t("user.setting"), edit_user_path(current_user) %>
               </li>

@@ -7,8 +7,7 @@
           <th><b><center><%= course_subject.subject.name %></center></b></th>
           <th><%= t "subject.start" %>
           <span class="timestamp">
-            <%= course_subject.course.start_date.strftime(t "time_format") +
-              " - " + course_subject.course.end_date.strftime(t "time_format") %>
+            <%= course_subject.course.start_date %> - <%= course_subject.course.end_date %>
           </span>
           </th>
           <th>
