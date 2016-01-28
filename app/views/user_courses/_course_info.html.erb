@@ -10,6 +10,8 @@
   </div>
   <div class="col-md-2 col-sm-2">
     <% get_status @user_course.status %>
-    <%= button_tag @check_box_text, class: "btn #{@task_class}" %>
+    <%= button_tag @check_box_text  %>
+    <%= link_to @check_box_text,
+      "javascript:change_status_course(#{@user_course.id})", class: "btn #{@task_class}" %>
   </div>
 </div>

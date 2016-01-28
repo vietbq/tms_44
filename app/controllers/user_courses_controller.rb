@@ -12,6 +12,13 @@ class UserCoursesController < ApplicationController
     @title_for_layout = t "header.calendar"
   end
 
+  def update
+    respond_to do |format|
+      format.js
+      format.html {redirect calendar_path}
+    end
+  end
+
   private
   def get_user_course_is_trainning
     user_courses = current_user.user_courses

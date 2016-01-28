@@ -34,3 +34,14 @@ function hidden_content(id) {
     $(id).show();
   }
 }
+
+function change_status_course(user_course_id){
+  $.ajax({
+    url: "/user_courses/update",
+    type: "GET",
+    data: {user_course_id: user_course_id},
+    success: function (data) { 
+      $("#course-trainning").html("jnsajkasjn");
+    }
+  });
+}

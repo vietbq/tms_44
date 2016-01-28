@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   delete "logout" => "sessions#destroy"
   resources :users, only: [:show, :edit, :update]
   resources :password_resets, except: [:destroy, :index]
-  resources :user_courses, only: [:index]
+  resources :user_courses, only: [:index, :update]
   get "calendar" => "user_courses#show"
   resources :courses, only: [:show] do
     resources :members, only: [:index]
