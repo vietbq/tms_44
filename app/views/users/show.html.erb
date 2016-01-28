@@ -6,16 +6,32 @@
     <div class="row">
       <%= render "profile" %>
     </div>
-    <div class="row">
-      <div class="col-md-8 col-sm-12  col-xs-12">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <%= render "courses_options" %>
-          <%= render "list_subjects" %>
-        </div>
-      </div>
-      <div class="col-md-4 col-sx-12">
-        <%= render "activities" %>
-      </div>
-    </div>
   </div>
 </div>
+<h1><%= t "user_courses.title" %></h1>
+<hr>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th><%= t "user_courses.course" %></th>
+      <th><%= t "user_courses.subjects" %></th>
+      <th><%= t "user_courses.start" %></th> 
+      <th><%= t "user_courses.end" %></th>
+      <th><%= t "user_courses.status" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user_courses.each_with_index do |user_course,index| %>
+      <% course_status user_course.status %>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td><%= link_to user_course.course.name, user_course.course  %></td>
+        <td><%= user_course.course.course_subjects.count %></td>
+        <td><%= user_course.course.start_date %></td>
+        <td><%= user_course.course.end_date %></td>
+        <td><%= label_tag @status_text, nil, class: @label_class %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
