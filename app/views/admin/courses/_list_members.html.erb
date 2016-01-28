@@ -15,7 +15,8 @@
 <ul>
   <% @users.each do |user| %>
   <li>
-    <%= user.email %>
+    <%= link_to user.email,
+      admin_course_user_course_path(@course, @course.get_user_course(user)) %>
     <% if @course.managed_by?(current_superuser) && @course.not_start? %>
       <%= link_to "",
         admin_course_user_course_path(@course, @course.get_user_course(user)),

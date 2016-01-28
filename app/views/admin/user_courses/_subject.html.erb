@@ -1,0 +1,13 @@
+<tr class="success"> 
+  <td></td>
+  <td><%= subject.name %></td>
+  <td></td>
+  <td><%= subject.description %></td>
+  <td></td>
+  <td><%= @course.get_course_subject(subject).start_date %></td>
+  <td><%= @course.get_course_subject(subject).end_date %></td>
+</tr>
+<% subject.tasks.each do |task| %>
+  <%= render "task", course_subject: @course.get_course_subject(subject),
+    task: task %>
+<% end %>

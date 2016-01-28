@@ -1,0 +1,26 @@
+<tr class="active"> 
+  <td></td>
+  <td></td>
+  <td><%= task.name %></td>
+  <td><%= task.description %></td>
+  <td>
+    <% case course_subject.status %>
+    <% when "not_start" %>
+      <span class="label label-info"><%= t "admin.celendar.not_start" %></span>
+    <% when "trainning" %>
+      <% if course_subject.finish_task? @user, task %>
+        <span class="label label-success"><%= t "admin.celendar.finish" %></span>
+      <% else %>
+        <span class="label label-warning"><%= t "admin.celendar.be_doing" %></span>
+      <% end %>
+    <% when "finish" %>
+      <% if course_subject.finish_task? @user, task %>
+        <span class="label label-success"><%= t "admin.celendar.finish" %></span>
+      <% else %>
+        <span class="label label-danger"><%= t "admin.celendar.not_finish" %></span>
+      <% end %>
+    <% end %>
+  </td>
+  <td></td>
+  <td></td>
+</tr>

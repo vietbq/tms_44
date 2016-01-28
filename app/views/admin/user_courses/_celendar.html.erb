@@ -1,0 +1,17 @@
+<table class="table table-hover"> 
+  <tbody>
+    <tr class="warning"> 
+      <th><%= t "admin.celendar.course" %></th>
+      <th><%= t "admin.celendar.subject" %></th>
+      <th><%= t "admin.celendar.task" %></th>
+      <th><%= t "admin.celendar.description" %></th>
+      <th><%= t "admin.celendar.status" %></th>
+      <th><%= t "admin.celendar.start_date" %></th>
+      <th><%= t "admin.celendar.end_date" %></th>
+    </tr>
+    <%= render "course" %>
+    <% @subjects.each do |subject| %>
+      <%= render "subject", subject: subject %>
+    <% end %>
+  </tbody>
+</table>
