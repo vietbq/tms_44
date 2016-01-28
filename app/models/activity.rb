@@ -12,5 +12,11 @@ class Activity < ActiveRecord::Base
         target_id: object.id,
         description: description
     end
+
+    def get_course_activities user_course_id
+      activities = Activity.where("target_type = ? AND target_id = ?",
+        Settings.target_type.course, user_course_id).order(created_at: :desc).
+        limit Settings.limit_activity
+    end
   end
 end

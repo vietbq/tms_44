@@ -27,3 +27,5 @@ target_type:
 get_user_subjects_query: "user_id = ? and status != 0"  
 start: "start"
 finish: "finish"
+limit_activity: 40
+time_format: "%F"

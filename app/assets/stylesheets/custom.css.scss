@@ -154,3 +154,20 @@ input {
 .subject-button-width{
   width: 85px;
 }
+.user-course-trainning{
+  margin-bottom: 10px;
+}
+.calendar{
+  .course{
+    color: blue;
+    font-size: large
+  }
+  .subject{
+    color: darkviolet
+  }
+  .task{
+    color: brown;
+    font-style:italic;
+    font-family: -webkit-body
+  }
+}

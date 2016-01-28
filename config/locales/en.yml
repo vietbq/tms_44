@@ -32,6 +32,7 @@ en:
     account: "Account"
     courses: "Courses"
     subjects: "Subjects"
+    calendar: "Calendar"
     update_profile: "Update your profile"
   about:
     t: "Member details"
@@ -220,3 +221,5 @@ en:
     hide: "Hide"
     activity: "Activities"
   time_format: "%d/%m/%Y"
+  calendar:
+    title: "Your course is trainning"
