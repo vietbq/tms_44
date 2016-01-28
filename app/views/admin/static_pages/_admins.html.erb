@@ -1,0 +1,30 @@
+<div class="col-md-4">
+  <div class="panel panel-info">
+    <div class="panel panel-heading">
+      <h3 class="panel-title"><%= t "dashboard.admin" %></h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class=" col-md-12">
+          <table class="table table-user-information">
+            <tbody>
+              <tr>
+                <td><%= t "dashboard.amount" %></td>
+                <td><%= @admins.count %></td>
+              </tr>
+              <tr>
+                <td><%= link_to t("dashboard.view"), admin_superusers_path %></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><%= link_to t("dashboard.create"),
+                  new_admin_superuser_path %></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
