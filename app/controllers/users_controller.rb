@@ -1,12 +1,10 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:show, :edit, :update]
-  before_action :load_user, only: [:show, :edit, :update]
+  before_action :load_user, :get_user_course, only: [:show, :edit, :update]
   include UserSubjectsHelper
+  include UserCoursesHelper
 
   def show
-    @user_course = @user.user_courses.first
-    @course_subjects = @user_course.course.course_subjects
-    @activities = Activity.get_user_activities current_user.id
   end
   
   def edit
@@ -29,5 +27,9 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation
+  end
+
+  def get_user_course
+    @user_courses = @user.user_courses
   end
 end
