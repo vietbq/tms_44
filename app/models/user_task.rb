@@ -1,11 +1,11 @@
 class UserTask < ActiveRecord::Base
   belongs_to :user
   belongs_to :course_subject_task
-  after_save :update_task_activity
+  after_save :create_task_activity
 
   enum status: [:not_start, :trainning, :finish]
 
-  def update_task_activity
+  def create_task_activity
     description = self.course_subject_task.task.name + " " + self.status
     Activity.update_activity self.user_id, self.course_subject_task.task.subject,
       Settings.target_type.subject, description

@@ -1,13 +1,20 @@
 module UserSubjectsHelper
   def get_subject_status course_subject_id
-    user_subject = UserSubject.get_user_subject course_subject_id, current_user.id
+    user_subject = current_user.user_subjects.find_by course_subject_id: course_subject_id
     get_status user_subject.status
+  end
+
+  def subject_status user_subject_status
+    status = Settings.status[user_subject_status]
+    @label_class = status.label_class
+    @status_text = status.title
   end
 
   def user_task_status course_subject_task_id
     user_task = UserTask.find_by user_id: current_user,
       course_subject_task_id: course_subject_task_id
-    get_status user_task.status
+    user_task ? get_status(Settings.status.finish.status) :
+      get_status(Settings.status.trainning.status)
   end
 
   private
