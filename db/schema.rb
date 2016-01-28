@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160127114901) do
+ActiveRecord::Schema.define(version: 20160128084141) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20160127114901) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "status",     default: 0
+    t.datetime "start_date"
+    t.datetime "end_date"
   end
 
   add_index "course_subjects", ["course_id"], name: "index_course_subjects_on_course_id"
@@ -110,8 +112,6 @@ ActiveRecord::Schema.define(version: 20160127114901) do
     t.datetime "finish_date"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
-    t.datetime "start_date"
-    t.datetime "end_date"
   end
 
   add_index "user_subjects", ["course_subject_id"], name: "index_user_subjects_on_course_subject_id"

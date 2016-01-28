@@ -34,6 +34,10 @@ class Course < ActiveRecord::Base
     user_courses.find_by user_id: user.id
   end
 
+  def get_course_subject subject
+    course_subjects.find_by subject_id: subject.id
+  end
+
   def present_course_subjects
     hash_course_subjects = Hash.new
     course_subjects.each do |course_subject|
