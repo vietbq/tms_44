@@ -6,5 +6,6 @@ class Admin::StaticPagesController < ApplicationController
     @users = User.all
     @courses = Course.all
     @subjects = Subject.all
+    @admins = Superuser.all
   end
 end

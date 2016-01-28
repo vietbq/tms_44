@@ -1,0 +1,12 @@
+<tr> 
+  <th><%= superuser.id %></th> 
+  <td><%= superuser.name %></td>
+  <td><%= superuser.email %></td>  
+  <td><%= superuser.created_at %></td> 
+  <td>
+    <div class="pull-right">
+      <%= link_to t("delete"), [:admin, superuser], method: :delete,
+        data: {confirm: t("you_sure")}, class: "btn btn-danger" %>
+    </div>
+  </td>
+</tr>
