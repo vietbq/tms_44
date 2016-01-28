@@ -60,15 +60,8 @@ class Admin::CoursesController < ApplicationController
   end
 
   def load_objects
-    @subjects, @admins, @users = Array.new, Array.new, Array.new
-    @course.course_subjects.each do |course_subject|
-      @subjects << course_subject.subject
-    end
-    @course.superuser_courses.each do |superuser_course|
-      @admins << superuser_course.superuser
-    end
-    @course.user_courses.each do |user_course|
-      @users << user_course.user
-    end
+    @users = @course.load_users
+    @subjects = @course.load_subjects
+    @admins = @course.load_admins
   end
 end
