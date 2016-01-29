@@ -179,6 +179,7 @@ en:
       updated: "Course is updated successfully"
       start_success: "Start course success"
       start_error: "Course has user, who is in other started course"
+      finish_success: "Finish course success"
     celendar:
       of: "Celendar of "
       course: "Course"

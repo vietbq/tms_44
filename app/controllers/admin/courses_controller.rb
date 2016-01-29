@@ -30,11 +30,21 @@ class Admin::CoursesController < ApplicationController
   end
 
   def update
-    if @course.update_attributes course_params
-      flash[:success] = t "admin.course.updated"
+    case params[:status]
+    when Settings.finish
+      update_course_attributes
+      update_user_courses_attributes
+      update_course_subjects_attributes
+      update_user_subjects_attributes
+      flash[:success] = t "admin.course.finish_success"
       redirect_to admin_courses_path
     else
-      render :edit
+      if @course.update_attributes course_params
+        flash[:success] = t "admin.course.updated"
+        redirect_to admin_courses_path
+      else
+        render :edit
+      end
     end
   end
 
@@ -63,5 +73,30 @@ class Admin::CoursesController < ApplicationController
     @users = @course.load_users
     @subjects = @course.load_subjects
     @admins = @course.load_admins
+  end
+
+  def update_course_attributes
+    @course.update_attributes status: :finish, end_date: Time.now
+  end
+
+  def update_user_courses_attributes
+    @course.user_courses.each do |user_course|
+      user_course.update_attributes status: :finish
+    end
+  end
+
+  def update_course_subjects_attributes
+    @course.course_subjects.each do |course_subject|
+      course_subject.update_attributes status: :finish, end_date: Time.now
+    end
+  end
+
+  def update_user_subjects_attributes
+    @course.load_users.each do |user|
+      @course.course_subjects.each do |course_subject|
+        user_subject = user.user_subjects.find_by course_subject_id: course_subject.id
+        user_subject.update_attributes status: :finish
+      end
+    end
   end
 end
