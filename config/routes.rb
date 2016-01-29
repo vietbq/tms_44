@@ -30,7 +30,6 @@ Rails.application.routes.draw do
     resources :courses do
       resources :superuser_courses, only: [:new, :create]
       resources :user_courses, except: [:edit, :update, :index]
-      resources :user_subjects, only: [:create]
       resources :course_subjects, only: [:update]
     end
   end
