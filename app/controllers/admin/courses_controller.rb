@@ -40,7 +40,7 @@ class Admin::CoursesController < ApplicationController
       else
         flash[:danger] = t "admin.course.start_error"
       end
-      redirect_to admin_courses_path
+      redirect_to :back
     when Settings.finish
       update_course_finish
       update_user_courses_finish
@@ -51,7 +51,7 @@ class Admin::CoursesController < ApplicationController
     else
       if @course.update_attributes course_params
         flash[:success] = t "admin.course.updated"
-        redirect_to admin_courses_path
+        redirect_to :back
       else
         render :edit
       end
@@ -61,7 +61,7 @@ class Admin::CoursesController < ApplicationController
   def destroy
     @course.destroy
     flash[:success] = t "admin.course.deleted"
-    redirect_to admin_courses_path
+    redirect_to :back
   end
 
   private

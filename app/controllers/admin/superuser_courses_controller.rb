@@ -16,6 +16,11 @@ class Admin::SuperuserCoursesController < ApplicationController
     end
   end
 
+  def index
+    my_superuser_courses = SuperuserCourse.get_current_courses current_superuser.id
+    @superuser_courses = my_superuser_courses.paginate page: params[:page]
+  end
+
   private
   def add_admin_to_course
     if @course.managed_by? @superuser

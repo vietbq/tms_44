@@ -24,6 +24,7 @@
               <li>
                 <%= link_to t("user.setting"), edit_admin_superuser_path(current_superuser) %>
               </li>
+              <li><%= link_to t("admin.course.my_course"), admin_superuser_courses_path %></li>
               <li class="divider"></li>
               <li>
                 <%= link_to t("user.logout"), admin_logout_path, method: "delete" %>
