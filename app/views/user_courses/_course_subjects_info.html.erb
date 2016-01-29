@@ -18,8 +18,8 @@
           </span>
           </th>
           <th>
-            <%= button_tag @check_box_text,
-              class: "btn subject-button-width #{@task_class}" %>
+            <%= link_to @check_box_text, course_subject_path(course_subject),
+              method: :patch, class: "btn subject-button-width #{@task_class}" %>
           </th>
           <th>
             <%= link_to t("course.hide"),
@@ -34,7 +34,10 @@
           <tr> 
             <th scope="row"></th> 
             <td><p class="task"><%= course_subject_task.task.name %></p></td> 
-            <td><%= button_tag @check_box_text, class: @task_class %></td> 
+            <td>
+              <%= link_to @check_box_text, course_subject_task_path(course_subject_task),
+                method: :patch, class: @task_class %>
+            </td> 
             <td></td> 
           </tr> 
         <% end %>

@@ -2,6 +2,8 @@ class UserCoursesController < ApplicationController
   before_filter :logged_in_user
   before_action :get_user_course_is_trainning, :get_course_subjects,
     :get_course_activity, only: [:show]
+  before_action :get_user_course, only: [:update]
+  include UserCoursesHelper
 
   def index
     @title_for_layout = t "user_courses.title"
@@ -10,6 +12,11 @@ class UserCoursesController < ApplicationController
 
   def show
     @title_for_layout = t "header.calendar"
+  end
+
+  def update
+    finish_course @user_course if @user_course.present?
+    redirect_to calendar_path
   end
 
   private
@@ -31,4 +38,8 @@ class UserCoursesController < ApplicationController
     @activities = current_user.activities.get_course_activities @user_course.id if
       @user_course.present?
   end
-end
+
+  def get_user_course
+    @user_course = current_user.user_courses.find params[:id]
+  end
+end 

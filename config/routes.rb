@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   resources :password_resets, except: [:destroy, :index]
   resources :user_courses, only: [:index]
+  resources :course_subjects, only: [:update]
+  resources :course_subject_tasks, only: [:update]
   get "calendar" => "user_courses#show"
   resources :courses, only: [:show] do
     resources :members, only: [:index]
