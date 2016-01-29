@@ -1,0 +1,23 @@
+<tr> 
+  <th><%= superuser_course.course.id %></th> 
+  <td><%= link_to superuser_course.course.name,
+    admin_course_path(superuser_course.course) %></td>
+  <td><%= superuser_course.course.description %></td>
+  <td><%= superuser_course.course.start_date %></td>
+  <td><%= superuser_course.course.end_date %></td>
+  <td>
+    <div class="pull-right">
+      <% if superuser_course.course.not_start? %>
+        <%= link_to t("start"), admin_course_path(superuser_course.course, status: Settings.start),
+          method: :patch, class: "btn btn-success" %>
+        <%= link_to t("edit"), edit_admin_course_path(superuser_course.course),
+          class: "btn btn-primary" %>
+      <% elsif superuser_course.course.trainning? %>
+        <%= link_to t("finish"), admin_course_path(superuser_course.course, status: Settings.finish),
+          method: :patch, class: "btn btn-success" %>
+      <% end %>
+      <%= link_to t("delete"), [:admin, superuser_course.course], method: :delete,
+        data: {confirm: t("you_sure")}, class: "btn btn-danger" %>
+    </div>
+  </td>
+</tr>
