@@ -3,6 +3,10 @@ class Admin::UserCoursesController < ApplicationController
   before_action :logged_in_superuser
   before_action :load_course, only: [:create, :destroy]
   before_action :load_user_course, only: [:destroy]
+  before_action :load_objects, only: [:show]
+
+  def show
+  end
 
   def new
   end
@@ -30,6 +34,13 @@ class Admin::UserCoursesController < ApplicationController
 
   def load_user_course
     @user_course = UserCourse.find params[:id]
+  end
+
+  def load_objects
+    @course = Course.find params[:course_id]
+    @user_course = UserCourse.find params[:id]
+    @user = @user_course.user
+    @subjects = @course.load_subjects
   end
 
   def add_user_to_course

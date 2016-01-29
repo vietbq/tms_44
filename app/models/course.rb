@@ -9,6 +9,8 @@ class Course < ActiveRecord::Base
   validates :name, presence: true
   validates :description, presence: true
 
+  after_save :create_course_subject_task 
+
   def get_course_subjects
     list_course_subjects = Array.new
     Subject.all.each do |subject|
@@ -68,5 +70,14 @@ class Course < ActiveRecord::Base
       admins << superuser_course.superuser
     end
     admins
+  end
+
+  private
+  def create_course_subject_task
+    course_subjects.each do |course_subject|
+      course_subject.subject.tasks.each do |task|
+        CourseSubjectTask.create course_subject: course_subject, task: task
+      end
+    end
   end
 end
