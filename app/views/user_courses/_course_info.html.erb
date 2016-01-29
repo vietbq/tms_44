@@ -1,0 +1,15 @@
+<div class="col-md-12 user-course-trainning">
+  <div class="col-md-5 col-sm-5 col-xs-6">
+    <b class="course"><%= @user_course.course.name %></b>
+  </div>
+  <div class="col-md-5 col-sm-5 col-xs-6">
+    <%= label_tag t("course.start"), nil, class: "small_label" %>
+    <span class="timestamp">
+      <%= @user_course.course.start_date %>
+    </span>
+  </div>
+  <div class="col-md-2 col-sm-2">
+    <% get_status @user_course.status %>
+    <%= button_tag @check_box_text, class: "btn #{@task_class}" %>
+  </div>
+</div>

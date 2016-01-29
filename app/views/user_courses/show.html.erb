@@ -1,0 +1,20 @@
+<div class="panel panel-info calendar">
+  <div class="panel panel-heading">
+    <h3 class="panel-title"><%= t "calendar.title" %></h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8 col-sm-12  col-xs-12">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <% if @user_course.present? %>
+            <%= render "course_info" %>
+            <%= render "course_subjects_info" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-4 col-sx-12">
+        <%= render "activities" %>
+      </div>
+    </div>
+  </div>
+</div>
