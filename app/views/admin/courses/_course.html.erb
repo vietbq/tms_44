@@ -8,8 +8,8 @@
     <% if course.managed_by? current_superuser %>
       <div class="pull-right">
         <% if course.not_start? %>
-          <%= link_to t("start"), admin_course_user_subjects_path(course),
-            method: :post, class: "btn btn-success" %>
+          <%= link_to t("start"), admin_course_path(course, status: Settings.start),
+            method: :patch, class: "btn btn-success" %>
           <%= link_to t("edit"), edit_admin_course_path(course),
             class: "btn btn-primary" %>
         <% end %>

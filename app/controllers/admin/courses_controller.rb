@@ -31,11 +31,21 @@ class Admin::CoursesController < ApplicationController
 
   def update
     case params[:status]
+    when Settings.start
+      if users_not_busy?
+        flash[:success] = t "admin.course.start_success"
+        update_course_start
+        update_user_courses_start
+        create_user_subjects
+      else
+        flash[:danger] = t "admin.course.start_error"
+      end
+      redirect_to admin_courses_path
     when Settings.finish
-      update_course_attributes
-      update_user_courses_attributes
-      update_course_subjects_attributes
-      update_user_subjects_attributes
+      update_course_finish
+      update_user_courses_finish
+      update_course_subjects_finish
+      update_user_subjects_finish
       flash[:success] = t "admin.course.finish_success"
       redirect_to admin_courses_path
     else
@@ -75,23 +85,49 @@ class Admin::CoursesController < ApplicationController
     @admins = @course.load_admins
   end
 
-  def update_course_attributes
+  def users_not_busy?
+    check = true
+    @course.load_users.each do |user|
+      check = false if user.is_working?
+    end
+    check
+  end
+
+  def update_course_start
+    @course.update_attributes status: :trainning, start_date: Time.now
+  end
+
+  def update_user_courses_start
+    @course.user_courses.each do |user_course|
+      user_course.update_attributes status: :trainning
+    end
+  end
+
+  def create_user_subjects
+    @course.load_users.each do |user|
+      @course.course_subjects.each do |course_subject|
+        course_subject.user_subjects.create user: user
+      end
+    end
+  end
+
+  def update_course_finish
     @course.update_attributes status: :finish, end_date: Time.now
   end
 
-  def update_user_courses_attributes
+  def update_user_courses_finish
     @course.user_courses.each do |user_course|
       user_course.update_attributes status: :finish
     end
   end
 
-  def update_course_subjects_attributes
+  def update_course_subjects_finish
     @course.course_subjects.each do |course_subject|
       course_subject.update_attributes status: :finish, end_date: Time.now
     end
   end
 
-  def update_user_subjects_attributes
+  def update_user_subjects_finish
     @course.load_users.each do |user|
       @course.course_subjects.each do |course_subject|
         user_subject = user.user_subjects.find_by course_subject_id: course_subject.id
