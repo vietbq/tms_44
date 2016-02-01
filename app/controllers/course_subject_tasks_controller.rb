@@ -20,7 +20,7 @@ class CourseSubjectTasksController < ApplicationController
     course_subject_tasks.each do |course_subject_task|
       user_task = UserTask.get_user_tasks current_user.id, course_subject_task.id
       if params && params.include?(course_subject_task.id.to_s) && !user_task
-        current_user.user_tasks.create status: :finish, course_subject_task: course_subject_task
+        finish_task course_subject_task
       end
     end
   end
