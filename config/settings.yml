@@ -20,6 +20,12 @@ status:
     check_box: true
     status_class: "status-finish" 
     label_class: "label-default label"
+  not_finish:
+    status: "not_finish"
+    title: "Not finish"
+    check_box: true
+    status_class: "not-finish" 
+    label_class: "label-info label"
 target_type:
   course: 1
   subject: 2

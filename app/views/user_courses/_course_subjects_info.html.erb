@@ -30,13 +30,13 @@
       </thead> 
       <tbody id=<%= "task-in-profle-" + course_subject.id.to_s %> > 
         <% course_subject.course_subject_tasks.each do |course_subject_task| %>
-          <% user_task_status course_subject_task.id %>
+          <% user_task_status course_subject_task %>
           <tr> 
             <th scope="row"></th> 
             <td><p class="task"><%= course_subject_task.task.name %></p></td> 
             <td>
-              <%= link_to @check_box_text, course_subject_task_path(course_subject_task),
-                method: :patch, class: @task_class %>
+              <%= render "task_status", course_subject: course_subject,
+                course_subject_task: course_subject_task %>
             </td> 
             <td></td> 
           </tr> 

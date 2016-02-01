@@ -1,0 +1,17 @@
+<% case course_subject.status %>
+<% when "not_start" %>
+  <span class="label label-info"><%= t "admin.celendar.not_start" %></span>
+<% when "trainning" %>
+  <% if course_subject.finish_task? current_user, course_subject_task.task %>
+    <span class="label label-default"><%= t "admin.celendar.finish" %></span>
+  <% else %>
+    <%= link_to @check_box_text, course_subject_task_path(course_subject_task),
+      method: :patch, class: "trainning" %>
+  <% end %>
+<% when "finish" %>
+  <% if course_subject.finish_task? current_user, course_subject_task.task %>
+     <span class="label label-default"><%= t "admin.celendar.finish" %></span>
+  <% else %>
+    <span class="label label-danger"><%= t "admin.celendar.not_finish" %></span>
+  <% end %>
+<% end %>
