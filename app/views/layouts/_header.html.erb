@@ -14,7 +14,6 @@
       <ul class="nav navbar-nav">
         <% if logged_in? %>
           <li><%= link_to t("header.courses"), user_courses_path %></li>
-          <li><%= link_to t("header.subjects"), user_subjects_path %></li>
           <li><%= link_to t("header.calendar"), calendar_path %></li>
         <% end %>
         <li><%= link_to t("header.about"), about_path %></li>

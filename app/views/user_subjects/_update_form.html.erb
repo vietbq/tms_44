@@ -7,7 +7,8 @@
         <div class="controls" style="float: bottom">
           <label class="checkbox-sub inline">
             <%= hidden_field_tag "course_subject_task[]", course_subject_task.id %>
-            <% if !course_subject_task.course_subject.finish? %>
+            <% if !course_subject_task.course_subject.finish? || 
+              @check_box_text == Settings.status.trainning.title %>
               <%= check_box_tag "status[]", course_subject_task.id, @check_box_status %>
             <% end %>
             <i><%= @check_box_text %></i>
