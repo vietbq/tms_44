@@ -40,8 +40,8 @@ module UserCoursesHelper
 
   def update_course_subject course_subject, user_subject
     user_subject.update_attributes status: :finish, finish_date: Time.now
-    description = course_subject.course.name + " " + course_subject.status
-    Activity.update_activity current_user.id, course_subject.course,
-      Settings.target_type.course, description
+    description = course_subject.subject.name + " " + course_subject.status
+    Activity.update_activity current_user.id, course_subject,
+      Settings.target_type.subject, description
   end
 end
