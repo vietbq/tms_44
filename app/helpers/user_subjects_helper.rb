@@ -11,11 +11,15 @@ module UserSubjectsHelper
     @status_text = status.title
   end
 
-  def user_task_status course_subject_task_id
+  def user_task_status course_subject_task
     user_task = current_user.user_tasks.
-      find_by course_subject_task_id: course_subject_task_id
-    user_task ? get_status(Settings.status.finish.status) :
-      get_status(Settings.status.trainning.status)
+      find_by course_subject_task: course_subject_task
+    if course_subject_task.course_subject.finish? && user_task.nil?
+      get_status Settings.status.not_finish.status
+    elsif
+      user_task.present? ? get_status(Settings.status.finish.status) :
+        get_status(Settings.status.trainning.status)
+    end
   end
 
   private

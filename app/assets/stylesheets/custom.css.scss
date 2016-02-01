@@ -116,6 +116,11 @@ input {
     margin: 10px 0.5% 0px 0.5%;
     padding: 10px;
   }
+  .not-finish{
+    width: 150px;
+    margin: 10px 0.5% 0px 0.5%;
+    padding: 10px;
+  }
   .instruction{
     display: inline;
   }
@@ -149,6 +154,10 @@ input {
 }
 .status-finish{
   background: #9A9A9A;
+  color: white;
+}
+.not-finish{
+  background: red;
   color: white;
 }
 .subject-button-width{

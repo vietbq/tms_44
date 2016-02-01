@@ -1,13 +1,15 @@
 <%= form_tag user_subject_course_subject_tasks_path(@user_subject) do %>
   <div class="row text-center">
     <% @course_subject_tasks.each do |course_subject_task| %>
-      <% user_task_status course_subject_task.id %>
+      <% user_task_status course_subject_task %>
       <label class= "<%= @task_class %>" >
         <center><%= course_subject_task.task.name %><br></center>
         <div class="controls" style="float: bottom">
           <label class="checkbox-sub inline">
             <%= hidden_field_tag "course_subject_task[]", course_subject_task.id %>
-            <%= check_box_tag "status[]", course_subject_task.id, @check_box_status %>
+            <% if !course_subject_task.course_subject.finish? %>
+              <%= check_box_tag "status[]", course_subject_task.id, @check_box_status %>
+            <% end %>
             <i><%= @check_box_text %></i>
           </label>
         </div>

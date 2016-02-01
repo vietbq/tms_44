@@ -217,6 +217,7 @@ en:
     hide: " (hide) "
     activity: "Activities"
     error_not_start: "This subject not start!"
+    finished: "This subject finished"
   course:
     title: "Course: "
     start: "Start date: "
