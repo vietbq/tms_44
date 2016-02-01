@@ -19,6 +19,7 @@ class Admin::CoursesController < ApplicationController
     @course = Course.new course_params
     if @course.save
       add_current_superuser_to_course
+      @course.create_course_subject_task
       flash[:success] = t "admin.course.created"
       redirect_to admin_courses_path
     else
