@@ -35,7 +35,7 @@ class UserCoursesController < ApplicationController
   end
 
   def get_course_activity
-    @activities = current_user.activities.get_course_activities @user_course.id if
+    @activities = current_user.activities.get_course_activities @user_course.course if
       @user_course.present?
   end
 

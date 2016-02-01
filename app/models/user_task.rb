@@ -7,7 +7,8 @@ class UserTask < ActiveRecord::Base
 
   def create_task_activity
     description = self.course_subject_task.task.name + " " + self.status
-    Activity.update_activity self.user_id, self.course_subject_task.task.subject,
+    course_subject = self.course_subject_task.course_subject
+    Activity.update_activity self.user_id, course_subject,
       Settings.target_type.subject, description
   end
 

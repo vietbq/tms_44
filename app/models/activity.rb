@@ -13,10 +13,14 @@ class Activity < ActiveRecord::Base
         description: description
     end
 
-    def get_course_activities user_course_id
-      activities = Activity.where("target_type = ? AND target_id = ?",
-        Settings.target_type.course, user_course_id).order(created_at: :desc).
-        limit Settings.limit_activity
+    def get_course_activities course
+      course_subjects_id = Array.new
+      course.course_subjects.each do |course_subject|
+        course_subjects_id << course_subject.id
+      end
+      activities = Activity.where("target_type = ? AND target_id IN (?)",
+        Settings.target_type.subject, course_subjects_id).
+        order(created_at: :desc)
     end
   end
 end
